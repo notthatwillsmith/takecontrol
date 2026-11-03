@@ -64,5 +64,5 @@
             - check for Linux support
             - It’s OK to dig out an old laptop or buy a cheap used laptop for this
             - XPS 13 (new Core 5 320 6-core, 8GB RAM, $800) - L1Techs forum thread ([https://forum.level1techs.com/t/linux-distro-for-dell-xps-13-dx13260/253705](https://forum.level1techs.com/t/linux-distro-for-dell-xps-13-dx13260/253705)) had a lot of good info.
-                - Jeff Geerling posted a video with Fedora on it, but I don’t have personal experience and documentation on XPS13s is hard, because there are 12 different SKUs with that model name
+                - Jeff Geerling posted ([a video](https://www.jeffgeerling.com/blog/2026/excited-for-intel-efficiency/)) with Fedora on it, but I don’t have personal experience and documentation on XPS13s is hard, because there are 12 different SKUs with that model name
                 - The type of stuff I’ve had trouble with with XPS 13s in the past are the camera and fingerprint reader
