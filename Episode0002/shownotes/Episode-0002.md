@@ -10,7 +10,7 @@ Talk about the git repo
 
 https://github.com/notthatwillsmith/takecontrol
 
-TakeControl.content.town
+https://takeControl.content.town/subscribe - I'm funding this out of pocket and would love to be able to do more stuff, like hire a contributor, fund open source projects I love, and more. Subscribing gets you an ad-free feed, early access to the episode (when possible), access to the Subscriber-only Discord, and more! 
 
 AD -  Fastmail is an email service for people like you and me. I love it’s one-touch integrations with 1Password and Bitlocker, which lets me easily create single-use email addresses when I sign up for new services. I also love its integrated domain support. You connect your domains to its backend and then spinning up a new address is as easy as a few clicks in your webmail interface. If you want to support the show, try it out free for 30 days. Go to [join.fastmail.com/wil](http://join.fastmail.com/will)l to sign up. There’s no obligation and they don’t even ask for your credit card.  You get a great email host that isn’t spying on you and they throw me a few bucks for everyone who signs up. Thanks Fastmail! 
 
