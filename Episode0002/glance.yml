@@ -1,0 +1,188 @@
+pages:
+  - name: Home
+    # Optionally, if you only have a single page you can hide the desktop navigation for a cleaner look
+    # hide-desktop-navigation: true
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+            first-day-of-week: monday
+
+          - type: rss
+            limit: 20
+            collapse-after: 5
+            cache: 12h
+            feeds:
+               - url: # RSS FEED HERE, I use the output from my FreshRSS instance so I have really clean controls over how many items from each feed show  
+#              - url: https://selfh.st/rss/
+#                title: selfh.st
+#                limit: 1
+#              - url: https://www.pcgamer.com/feeds.xml
+#                title: PC Gamer
+#                limit: 1
+#              - url: https://www.joshwcomeau.com/rss.xml
+#                title: Josh Comeau
+#              - url: https://daringfireball.net/feeds/main
+#                title: Daring Fireball
+#                limit: 1
+#              - url: https://www.xda-developers.com/feed/tag/rss/
+#                title: XDA Devs
+#              - url: https://www.phoronix.com/phoronix-rss.php
+#                title: Phoronix 
+#                limit: 1
+#              - url: https://samwho.dev/rss.xml
+#              - url: https://ishadeed.com/feed.xml
+#                title: Ahmad Shadeed
+
+          - type: twitch-channels
+            channels:
+              - nextlander
+              - beckyandfrank
+              - chocotaco
+              - remapradio
+              - giantbomb
+              - waterdance
+
+      - size: full
+        widgets:
+          - type: search
+            search-engine: kagi
+            new-tab: no
+            bangs:
+              - title: Kagi
+                shortcut: "!kagi"
+                url: https://kagi.com/search?q={QUERY}
+              - title: YouTube
+                shortcut: "!yt"
+                url: https://www.youtube.com/results?search_query={QUERY}
+              - title: Amazon
+                shortcut: "!ama"
+                url: https://www.amazon.com/s?k={QUERY}
+              - title: Google
+                shortcut: "!goog"
+                url: https://www.google.com/search?q={QUERY}
+              - title: Duck Duck Go
+                shortcut: "!duck"
+                url: https://duckduckgo.com/?&q={QUERY}
+
+          - type: group
+            widgets:
+              - type: hacker-news
+              - type: lobsters
+
+          - type: videos
+            channels:
+              - UC3KEoMzNz8eYnwBC34RaKCQ # Simone
+              - UC9PBzalIcEQCsiIkq36PyUA # Digital Foundry
+              - UChIs72whgZI9w6d6FhwGGHA # Gamers Nexus
+              - UCT5C7yaO3RVuOgwP8JVAujQ # Taskmaster
+              - UCl9E4Zxa8CVr2LBLD0_TaNg # Jomboy
+              - UCNzszbnvQeFzObW0ghk0Ckw # Dave's Garage
+              - UC0fDG3byEcMtbOqPMymDNbw # Noclip 
+
+          - type: group
+            widgets:
+              - type: reddit
+                subreddit: technology
+                show-thumbnails: true
+              - type: reddit
+                subreddit: linux
+                show-thumbnails: true
+              - type: reddit
+                subreddit: selfhosted
+                show-thumbnails: true
+              - type: reddit
+                subreddit: functionalprint
+                show-thumbnails: true
+              - type: reddit
+                subreddit: whatisthisthing
+                show-thumbnails: true
+
+      - size: small
+        widgets:
+          - type: weather
+            location: Pacifica, California, United States
+            units: imperial # alternatively "imperial"
+            hour-format: 12h # alternatively "24h"
+            # Optionally hide the location from being displayed in the widget
+            # hide-location: true
+
+          - type: markets
+            markets:
+              - symbol: SPY
+                name: S&P 500
+              - symbol: BTC-USD
+                name: Bitcoin
+              - symbol: NVDA
+                name: NVIDIA
+              - symbol: AAPL
+                name: Apple
+              - symbol: MSFT
+                name: Microsoft
+
+          - type: releases
+            cache: 1d
+            # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+            # read-only token from your Github account settings and use it here to increase the limit.
+            # token: ...
+            repositories:
+              - glanceapp/glance
+           #  - go-gitea/gitea
+           #  - immich-app/immich
+           #  - syncthing/syncthing
+
+  - name: Gaming
+    columns:
+      - size: small
+        widgets:
+          - type: twitch-top-games
+            limit: 20
+            collapse-after: 13
+            exclude:
+              - just-chatting
+              - pools-hot-tubs-and-beaches
+              - music
+              - art
+              - asmr
+      - size: full
+        widgets:
+          - type: group
+            widgets:
+              - type: reddit
+                show-thumbnails: true
+                subreddit: pcgaming
+              - type: reddit
+                subreddit: games
+
+          - type: videos
+            style: grid-cards
+            collapse-after-rows: 3
+            channels:
+              - UCmeds0MLhjfkjD_5acPnFlQ # Giant Bomb
+              - UCNvzD7Z-g64bPXxGzaQaa4g # gameranx
+              - UCZ7AeeVbyslLM_8-nVy2B8Q # Skill Up
+              - UCHDxYLv8iovIbhrfl16CNyg # GameLinked
+              - UC9PBzalIcEQCsiIkq36PyUA # Digital Foundry
+
+      - size: small
+        widgets:
+          - type: reddit
+            subreddit: gamingnews
+            limit: 7
+            style: vertical-cards
+
+
+  # Add more pages here:
+  # - name: Your page name
+  #   columns:
+  #     - size: small
+  #       widgets:
+  #         # Add widgets here
+
+  #     - size: full
+  #       widgets:
+  #         # Add widgets here
+
+  #     - size: small
+  #       widgets:
+  #         # Add widgets here
