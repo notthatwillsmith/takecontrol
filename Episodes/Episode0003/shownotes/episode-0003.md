@@ -25,7 +25,7 @@ AD -  Fastmail is an email service for people like you and me. I love it’s one
     - Talk about defaults mattering, and the ability to change this stuff only impacts a tiny percentage of users. 90+% of people will never do this stuff
         - Also, please subscribe, because I just cut my total addressable audience from 8B people to 80M people
     - Everything was tested on Windows 25H2
-    - Also plug the Github and the article - [https://github.com/notthatwillsmith/content.town](https://github.com/notthatwillsmith/content.town)
+    - Also plug the Github and the article - [https://github.com/notthatwillsmith/takecontrol](https://github.com/notthatwillsmith/takecontrol)
     - Fix the Start Menu
         - Turn off the personalization (Settings > Personalization > Start
             - Show recommendation for tips and app recommendations, shortcuts, new apps, and more to off
