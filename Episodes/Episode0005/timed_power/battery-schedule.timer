@@ -1,0 +1,11 @@
+[Unit]
+Description=Check battery schedule every 5 minutes
+
+[Timer]
+OnBootSec=1min
+OnCalendar=*:0/5
+AccuracySec=30s
+
+[Install]
+WantedBy=timers.target
+EOF

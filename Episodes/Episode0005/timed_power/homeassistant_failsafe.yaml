@@ -1,0 +1,9 @@
+alias: Server charger on at midnight (failsafe)
+mode: single
+triggers:
+  - trigger: time
+    at: "00:01:00"
+actions:
+  - action: switch.turn_on
+    target:
+      entity_id: your.smart.switch.entity.name.here

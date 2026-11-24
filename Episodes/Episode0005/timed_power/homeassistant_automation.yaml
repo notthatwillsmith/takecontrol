@@ -1,0 +1,11 @@
+alias: Server charger plug (webhook)
+mode: queued
+triggers:
+  - trigger: webhook
+    webhook_id: your.webhook.id.here   # your random ID
+    allowed_methods: [POST]
+    local_only: true
+actions:
+  - action: "switch.turn_{{ 'on' if trigger.json.on else 'off' }}"
+    target:
+      entity_id: your.smart.switch.entity.name.here

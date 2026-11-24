@@ -1,0 +1,40 @@
+#!/bin/bash
+# battery-schedule: run on battery from START_HOUR to midnight, wall power otherwise.
+set -u
+
+BAT=/sys/class/power_supply/BAT0        # get this by running ls /sys/class/power_supply/
+AC=/sys/class/power_supply/AC0          # get this by running ls /sys/class/power_supply/
+HA=http://homeassistant.local:8123      # your home assistant address and port, this is the default
+HOOK=your.webhook.url
+START_HOUR=15                           # battery window time starts at 15:00 local time
+MIN=20                                  # this is the battery % floor: stop draining here
+FLAG=/run/battery-floor-hit
+
+plug() {
+    curl -fsS -m 10 -X POST -H 'Content-Type: application/json' \
+         -d "{\"on\": $1}" "$HA/api/webhook/$HOOK" >/dev/null
+}
+
+hour=$((10#$(date +%H)))
+cap=$(cat "$BAT/capacity")
+online=$(cat "$AC/online")
+
+if (( hour >= START_HOUR )); then
+    (( cap <= MIN )) && touch "$FLAG"
+    if [[ -e $FLAG ]]; then want=true; else want=false; fi
+else
+    rm -f "$FLAG"
+    want=true
+fi
+
+# Already in the right state? Nothing to do.
+if [[ $want == true && $online == 1 ]] || [[ $want == false && $online == 0 ]]; then
+    exit 0
+fi
+
+if plug "$want"; then
+    logger -t battery-schedule "requested charger on=$want (battery ${cap}%, AC online=$online)"
+else
+    logger -t battery-schedule -p user.err "webhook call failed (wanted on=$want)"
+    exit 1
+fi
